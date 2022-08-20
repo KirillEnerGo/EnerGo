@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	tools:showIn = "navigation_view">
+
+	<item android:title="@string/adv_cat1">
+
+		<menu>
+			<item
+				android:title="@string/adv_my_branch"
+				android:id="@+id/id_my_branch"
+				/>
+			<item
+				android:title="@string/adv_pro"
+				android:id="@+id/id_pro"
+				/>
+			<item
+				android:title="@string/adv_innovation"
+				android:id="@+id/id_innovation"
+				/>
+			<item
+				android:title="@string/adv_sport"
+				android:id="@+id/id_sport"
+				/>
+			<item
+				android:title="@string/adv_creation"
+				android:id="@+id/id_creation"
+				/>
+			<item
+				android:title="@string/adv_social_direction"
+				android:id="@+id/id_s_dir"
+				/>
+			<item
+				android:title="@string/adv_social_activity"
+				android:id="@+id/id_s_act"
+				/>
+		</menu>
+
+	</item>
+
+	<item android:title="@string/ac_cat2">
+
+		<menu>
+			<item
+				android:title="@string/ac_sign_up"
+				android:id="@+id/id_sign_up"
+				/>
+			<item
+				android:title="@string/ac_sign_in"
+				android:id="@+id/id_sign_in"
+				/>
+			<item
+				android:title="@string/ac_out"
+				android:id="@+id/id_out"
+				/>
+
+		</menu>
+
+	</item>
+
+</menu>

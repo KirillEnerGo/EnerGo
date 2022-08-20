@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "645431296988",
+    "project_id": "energo-c9732",
+    "storage_bucket": "energo-c9732.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:645431296988:android:b32997ba21319e9eb44519",
+        "android_client_info": {
+          "package_name": "com.mosenergo.energo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "645431296988-7bgll3s3964qop5mhonqsj602gk5lrgl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mosenergo.energo",
+            "certificate_hash": "d366eb95616852c809eeec5e238273f3364613ca"
+          }
+        },
+        {
+          "client_id": "645431296988-iar75gliedkt4qn2spsec1ufrnddnj1q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhZLfnyWbTvaoOaP2jyGWzATyJl-1rpzU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "645431296988-iar75gliedkt4qn2spsec1ufrnddnj1q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

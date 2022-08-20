@@ -1,0 +1,35 @@
+<resources>
+	<string name="app_name">EnerGo</string>
+	<!-- Menu drawer strings -->
+	<string name="adv_cat1">Новости</string>
+	<string name="adv_my_branch">Мои новости</string>
+	<string name="adv_pro">Профессионализм</string>
+	<string name="adv_innovation">Инновации и развитие</string>
+	<string name="adv_sport">Спорт</string>
+	<string name="adv_creation">Творчество</string>
+	<string name="adv_social_direction">Социальное направление</string>
+	<string name="adv_social_activity">Общественная деятельность</string>
+
+	<string name="ac_cat2">Аккаунт</string>
+	<string name="ac_sign_up">Регистрация</string>
+	<string name="ac_sign_in">Вход</string>
+	<string name="ac_out">Выход</string>
+
+	<string name="open">open</string>
+	<string name="close">close</string>
+	<string name="not_reg">Войдите или зарегестрируйтесь!</string>
+
+	<!-- Sign Dialog -->
+	<string name="email_reset_password_was_sent">Reset e-mail was sent!</string>
+	<string name="dialog_reset_email_message">Для восстановления пароля укажите ваш e-mail</string>
+	<string name="email_hint">Email</string>
+	<string name="password_hint">Password</string>
+	<string name="sign_up_action">Зарегестрироваться</string>
+	<string name="sign_in_action">Войти</string>
+	<string name="forget_password">Забыли пароль?</string>
+	<string name="sign_up_error">Неудалось зарегестрироваться</string>
+	<string name="sign_in_error">Неудалось войти</string>
+	<string name="send_verification_error">Неудалось отправить e-mail для подтверждения</string>
+	<string name="send_verification_done">На вашу почту была отправлена ссылка для подтверждения аккаунта, пожалуйста подтвердите аккаунт</string>
+
+</resources>
