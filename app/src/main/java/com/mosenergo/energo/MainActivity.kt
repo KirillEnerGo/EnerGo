@@ -3,18 +3,16 @@ package com.mosenergo.energo
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import android.view.Menu
 import android.view.MenuItem
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
-import com.example.boardforfinders.dialoghelper.GoogleActConst
-import com.google.android.gms.auth.api.signin.GoogleSignIn
-import com.google.android.gms.common.api.ApiException
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.mosenergo.energo.act.EditAdsAct
 import com.mosenergo.energo.databinding.ActivityMainBinding
 import com.mosenergo.energo.dialoghelper.DialogConst
 import com.mosenergo.energo.dialoghelper.DialogHelper
@@ -27,10 +25,26 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
+		// с помощью binding получаем доступ ко всем элементам
 		rootElement = ActivityMainBinding.inflate(layoutInflater)
 		val view = rootElement.root
 		setContentView(view)
 		init()
+	}
+
+	// отслеживаем нажатие меню
+	override fun onOptionsItemSelected(item: MenuItem): Boolean {
+		if(item.itemId == R.id.id_new_ads){
+			// запускаем активити
+			val i = Intent(this, EditAdsAct::class.java)
+			startActivity(i)
+		}
+		return super.onOptionsItemSelected(item)
+	}
+
+	override fun onCreateOptionsMenu(menu: Menu): Boolean {
+		menuInflater.inflate(R.menu.main_menu, menu)
+		return super.onCreateOptionsMenu(menu)
 	}
 
 //	override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -56,6 +70,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 	}
 
 	private fun init(){
+		// использовать свой toolbar, не дефолтный чтобы и меню было к нему привязано
+		setSupportActionBar(rootElement.mainContent.toolbar)
 		val toggle = ActionBarDrawerToggle(
 			this,
 			rootElement.drawerLayout,
@@ -102,6 +118,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 //				Toast.makeText(this, "Pressed id_out", Toast.LENGTH_SHORT).show()
 				uiUpdate(null)
 				mAuth.signOut()
+//				dialogHelper.accHelper.signInOutG()
 			}
 		}
 		rootElement.drawerLayout.closeDrawer(GravityCompat.START)
