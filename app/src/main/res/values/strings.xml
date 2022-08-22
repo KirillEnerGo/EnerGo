@@ -37,7 +37,8 @@
 
 	<!-- Edit Activity -->
 	<string name="select_company">Выберите компанию :</string>
-	<string name="select_filial">Выберите филиал :</string>
+	<string name="select_tec">Выберите станцию / филиал :</string>
+	<string name="select_company_above">Выберите компанию из списка выше</string>
 
 
 </resources>

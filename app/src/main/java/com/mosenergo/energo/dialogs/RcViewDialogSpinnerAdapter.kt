@@ -12,12 +12,12 @@ import com.mosenergo.energo.R
 import com.mosenergo.energo.act.EditAdsAct
 import com.mosenergo.energo.dialogs.RcViewDialogSpinnerAdapter.*
 
-class RcViewDialogSpinnerAdapter(var context: Context, var dialog: AlertDialog): RecyclerView.Adapter<SpViewHolder>() {
+class RcViewDialogSpinnerAdapter(var tvSelection: TextView, var dialog: AlertDialog): RecyclerView.Adapter<SpViewHolder>() {
 	private val mainList = ArrayList<String>()
 
 	override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SpViewHolder {
 		val view = LayoutInflater.from(parent.context).inflate(R.layout.sp_list_item, parent, false)
-		return SpViewHolder(view, context, dialog)
+		return SpViewHolder(view, tvSelection, dialog)
 	}
 
 	override fun onBindViewHolder(holder: SpViewHolder, position: Int) {
@@ -27,7 +27,7 @@ class RcViewDialogSpinnerAdapter(var context: Context, var dialog: AlertDialog):
 	override fun getItemCount(): Int {
 		return mainList.size
 	}
-	class SpViewHolder(itemView: View, var context: Context, var dialog: AlertDialog) : RecyclerView.ViewHolder(itemView), OnClickListener {
+	class SpViewHolder(itemView: View, var tvSelection: TextView, var dialog: AlertDialog) : RecyclerView.ViewHolder(itemView), OnClickListener {
 		private var itemText = ""
 		fun setData(text: String){
 			val tvSpItem = itemView.findViewById<TextView>(R.id.tvSpItem)
@@ -37,7 +37,7 @@ class RcViewDialogSpinnerAdapter(var context: Context, var dialog: AlertDialog):
 		}
 		// выбор компании из списка и присваивание
 		override fun onClick(v: View?) {
-			(context as EditAdsAct).rootElement.tvCompany.text = itemText
+			tvSelection.text = itemText
 			dialog.dismiss()
 		}
 	}
