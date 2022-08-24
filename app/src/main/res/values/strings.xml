@@ -1,5 +1,5 @@
 <resources>
-	<string name="app_name">EnerGo</string>
+	<string name="app_name">Система достижений</string>
 	<!-- Menu drawer strings -->
 	<string name="adv_cat1">Новости</string>
 	<string name="adv_my_branch">Мои новости</string>

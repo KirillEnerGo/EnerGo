@@ -16,12 +16,17 @@ import com.mosenergo.energo.act.EditAdsAct
 import com.mosenergo.energo.databinding.ActivityMainBinding
 import com.mosenergo.energo.dialoghelper.DialogConst
 import com.mosenergo.energo.dialoghelper.DialogHelper
+//import com.fxn.pix.Pix
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 	private lateinit var tvAccount: TextView
 	private lateinit var rootElement: ActivityMainBinding
 	private val dialogHelper = DialogHelper(this)
 	val mAuth = FirebaseAuth.getInstance()
+
+
+
+
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)

@@ -73,8 +73,8 @@ object TecHelper {
 			return tempList
 		}
 		for (selection: String in list) {
-			if (selection.toLowerCase(Locale.ROOT)
-					.startsWith(searchText.toLowerCase(Locale.ROOT))
+			if (selection.lowercase(Locale.ROOT)
+					.startsWith(searchText.lowercase(Locale.ROOT))
 			) {
 				tempList.add(selection)
 			}
