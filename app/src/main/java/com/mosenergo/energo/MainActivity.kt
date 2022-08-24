@@ -3,8 +3,10 @@ package com.mosenergo.energo
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -17,6 +19,11 @@ import com.mosenergo.energo.databinding.ActivityMainBinding
 import com.mosenergo.energo.dialoghelper.DialogConst
 import com.mosenergo.energo.dialoghelper.DialogHelper
 //import com.fxn.pix.Pix
+import io.ak1.pix.*
+import io.ak1.pix.models.*
+import io.ak1.*
+//import com.fxn.pix.*
+
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 	private lateinit var tvAccount: TextView
@@ -137,4 +144,50 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 			user.email
 		}
 	}
+
+	////-------------->>>>>>>> for libPix
+
+	private fun getOptionsByPreference(mainActivity: MainActivity): Options {
+		val sp = PreferenceManager.getDefaultSharedPreferences(mainActivity)
+		return Options().apply {
+			isFrontFacing = sp.getBoolean("frontFacing", false)
+			ratio = when (sp.getString("ratio", "0")) {
+				"1" -> Ratio.RATIO_4_3
+				"2" -> Ratio.RATIO_16_9
+				else -> Ratio.RATIO_AUTO
+			}
+			flash = when (sp.getString("flash", "0")) {
+				"1" -> Flash.Disabled
+				"2" -> Flash.On
+				"3" -> Flash.Off
+				else -> Flash.Auto
+			}
+			mode = when (sp.getString("mode", "0")) {
+				"1" -> Mode.Picture
+				"2" -> Mode.Video
+				else -> Mode.All
+			}
+			videoOptions = VideoOptions().apply {
+				videoDurationLimitInSeconds = try {
+					sp.getString("videoDuration", "30")?.toInt() ?: 30
+				} catch (e: Exception) {
+					sp.apply {
+						edit().putString("videoDuration", "30").commit()
+					}
+					30
+				}
+			}
+			count = try {
+				sp.getString("count", "1")?.toInt() ?: 1
+			} catch (e: Exception) {
+				sp.apply {
+					edit().putString("count", "1").commit()
+				}
+				1
+			}
+			spanCount = sp.getString("spanCount", "4")?.toInt() ?: 4
+		}
+	}
+///////////////////////////////////////////
+
 }

@@ -7,10 +7,11 @@ plugins {
 }
 android {
 	compileSdk 32
+//	buildToolsVersion "30" // for pix lib
 
 	defaultConfig {
 		applicationId "com.mosenergo.energo"
-		minSdk 24
+		minSdk 28
 		targetSdk 32
 		versionCode 1
 		versionName "1.0"
@@ -34,10 +35,10 @@ android {
 	buildFeatures{
 		viewBinding true
 	}
+
 }
 
 dependencies {
-
 	implementation platform('com.google.firebase:firebase-bom:30.3.2')
 	implementation 'androidx.core:core-ktx:1.8.0'
 	implementation 'androidx.appcompat:appcompat:1.5.0'
@@ -49,11 +50,10 @@ dependencies {
 	implementation 'com.google.android.gms:play-services-auth:20.2.0'
 	implementation 'com.google.firebase:firebase-auth-ktx:21.0.7'
 	implementation 'com.google.firebase:firebase-storage-ktx:20.0.1'
-//	implementation files('libs/pix-1.5.6.aar')
+	implementation files('libs/pix-1.5.6.aar')
 	testImplementation 'junit:junit:4.13.2'
 	androidTestImplementation 'androidx.test.ext:junit:1.1.3'
 	androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 //	implementation  'io.ak1.pix:piximagepicker:1.6.3'
 	implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
-
 }
